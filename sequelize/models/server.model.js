@@ -8,11 +8,12 @@ module.exports = (sequelize) => {
 		},
 		id: {
 			allowNull: false,
-			type: DataTypes.BIGINT,
-			primaryKey: true,
+			type: DataTypes.INTEGER,
 			unique: true,
+			primaryKey: true,
+			autoIncrement: true,
 		},
-		channel_id: {
+		guild_id: {
 			type: DataTypes.BIGINT,
 			unique: true,
 		},

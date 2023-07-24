@@ -1,6 +1,5 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Collection } = require('discord.js');
 
 module.exports = {
 	name: 'deploy-commands',
@@ -12,7 +11,6 @@ module.exports = {
 		for (const file of commandFiles) {
 			const command = require(`./commands/${file}`);
 			commands.push(command)
-			//console.log(commands)
 		}
 		return commands;
 	}

@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('channels', {
+    await queryInterface.createTable('users_punishments', {
       guild_id: {
         allowNull: false,
         type: Sequelize.BIGINT,
@@ -13,11 +13,25 @@ module.exports = {
         allowNull: false,
         unique: true,
         primaryKey: true,
+        autoIncrement: true,
       },
-      owner_id: {
+      voice_channel_id: {
         type: Sequelize.BIGINT,
         allowNull: false,
-        unique: true,
+      },
+      target_id: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      initiator_id: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      punishment_type: {
+        type: Sequelize.STRING,
+      },
+      status: {
+        type: Sequelize.STRING,
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,

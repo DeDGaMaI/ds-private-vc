@@ -10,15 +10,12 @@ module.exports = {
 			},
 			id: {
 				allowNull: false,
-				type: Sequelize.BIGINT,
+				type: Sequelize.INTEGER,
+				unique: true,
 				primaryKey: true,
-				unique: true,
+				autoIncrement: true,
 			},
-			channel_id: {
-				type: Sequelize.BIGINT,
-				unique: true,
-			},
-			parent_id: {
+			guild_id: {
 				type: Sequelize.BIGINT,
 				unique: true,
 			},

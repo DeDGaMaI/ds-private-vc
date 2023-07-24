@@ -1,10 +1,9 @@
 const sequelize = require("../../sequelize");
 
 module.exports = async (id) => {
-	let res = await sequelize.models.servers.findOne({
+	return await sequelize.models.servers.findOne({
 		where: {
-			id: id,
+			guild_id: id,
 		}
 	})
-	return res;
 }
